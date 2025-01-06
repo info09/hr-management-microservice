@@ -5,7 +5,7 @@ services:
   orderdb:
     image: mcr.microsoft.com/mssql/server:2019-latest
   
-  productdb:
+  employeedb:
     image: mysql:8.0.29
   
   customerdb:
@@ -47,7 +47,7 @@ services:
 #network section
 networks:
   default:
-    name: tedu_microservices
+    name: hrm_microservices
     driver: bridge
 
 #volumes section
