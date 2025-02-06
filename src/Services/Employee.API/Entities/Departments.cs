@@ -4,6 +4,6 @@ namespace Employee.API.Entities
 {
     public class Departments : EntityAuditBase<Guid>
     {
-        public string DepartmentName { get; set; }
+        public string? DepartmentName { get; set; }
     }
 }

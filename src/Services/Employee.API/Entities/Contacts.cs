@@ -7,6 +7,6 @@ namespace Employee.API.Entities
     {
         public Guid EmployeeId { get; set; }
         public ContactType Email { get; set; }
-        public string ContactType { get; set; }
+        public string? ContactType { get; set; }
     }
 }

@@ -26,9 +26,9 @@ namespace Employee.API.Repositories
 
         public Task<Departments?> GetDepartmentByDepartmentName(string departmentName) => FindByCondition(x => x.DepartmentName.Equals(departmentName)).SingleOrDefaultAsync();
 
-        public Task<IEnumerable<Departments>> GetDepartments()
+        public async Task<IEnumerable<Departments>> GetDepartments()
         {
-            throw new NotImplementedException();
+            return await FindAll().ToListAsync();
         }
 
         public Task UpdateDepartment(Departments product) => UpdateAsync(product);
