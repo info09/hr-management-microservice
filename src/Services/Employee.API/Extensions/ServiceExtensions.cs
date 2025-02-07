@@ -22,6 +22,7 @@ namespace Employee.API.Extensions
             services.ConfigureProductDbContext(configuration);
             services.AddInfrastructureServices();
             services.AddAutoMapper(cfg => cfg.AddProfile(new MappingProfile()));
+            services.ConfigureCors(configuration);
 
             return services;
         }
@@ -43,6 +44,18 @@ namespace Employee.API.Extensions
                 }));
 
             return services;
+        }
+
+        private static void ConfigureCors(this IServiceCollection services, IConfiguration configuration)
+        {
+            var origin = configuration["AllowOrigins"];
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy", builder =>
+                {
+                    builder.WithOrigins(origin).AllowAnyHeader().AllowAnyMethod();
+                });
+            });
         }
 
         private static IServiceCollection AddInfrastructureServices(this IServiceCollection services)

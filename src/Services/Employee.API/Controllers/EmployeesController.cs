@@ -1,5 +1,4 @@
 ﻿using Employee.API.Repositories.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Shared.Dtos.Employee;
 
@@ -24,9 +23,16 @@ namespace Employee.API.Controllers
         }
 
         [HttpGet("paging")]
-        public async Task<IActionResult> GetAllPaging([FromQuery]EmployeeSearchDto search)
+        public async Task<IActionResult> GetAllPaging([FromQuery] EmployeeSearchDto search)
         {
             var data = await _employeeRepository.GetAllEmployees(search);
+            return Ok(data);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            var data = await _employeeRepository.GetEmployee(id);
             return Ok(data);
         }
 
@@ -36,5 +42,20 @@ namespace Employee.API.Controllers
             var data = await _employeeRepository.CreateEmployee(dto);
             return Ok(data);
         }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateEmployee([FromBody] UpdateEmployeeDto dto)
+        {
+            var data = await _employeeRepository.UpdateEmployee(dto);
+            return Ok(data);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEmployee(Guid id)
+        {
+            var data = await _employeeRepository.DeleteEmployee(id);
+            return Ok(data);
+        }
+
     }
 }

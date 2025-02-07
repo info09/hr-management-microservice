@@ -1,24 +1,8 @@
 ﻿namespace Shared.SeedWorks
 {
-    public class PagedList<T> : List<T>
+    public class PagedList<T> : PaginationBase where T : class
     {
-        public PagedList(IEnumerable<T> items, long totalItems, int pageNumber, int pageSize)
-        {
-            _metaData = new MetaData
-            {
-                TotalItems = totalItems,
-                PageSize = pageSize,
-                CurrentPage = pageNumber,
-                TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize)
-            };
-            AddRange(items);
-        }
-
-        private MetaData _metaData { get; }
-
-        public MetaData GetMetaData()
-        {
-            return _metaData;
-        }
+        public List<T> Items { get; set; }
     }
 }
+    

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Employee.API.Migrations
 {
     /// <inheritdoc />
-    public partial class InitDb : Migration
+    public partial class InitDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -21,7 +21,7 @@ namespace Employee.API.Migrations
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     EmployeeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Email = table.Column<int>(type: "int", nullable: false),
-                    ContactType = table.Column<string>(type: "longtext", nullable: false)
+                    ContactType = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CreatedDate = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: false),
                     LastModifiedDate = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true)
@@ -37,7 +37,7 @@ namespace Employee.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    DepartmentName = table.Column<string>(type: "longtext", nullable: false)
+                    DepartmentName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CreatedDate = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: false),
                     LastModifiedDate = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true)
@@ -54,7 +54,7 @@ namespace Employee.API.Migrations
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     EmployeeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    FullName = table.Column<string>(type: "longtext", nullable: false)
+                    FullName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Relations = table.Column<int>(type: "int", nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "datetime(6)", nullable: false),
@@ -73,14 +73,14 @@ namespace Employee.API.Migrations
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     EmployeeId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    ChangeType = table.Column<string>(type: "longtext", nullable: false)
+                    ChangeType = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ChangeDate = table.Column<DateTime>(type: "datetime(6)", nullable: false),
-                    OldValue = table.Column<string>(type: "longtext", nullable: false)
+                    OldValue = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    NewValue = table.Column<string>(type: "longtext", nullable: false)
+                    NewValue = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Description = table.Column<string>(type: "longtext", nullable: false)
+                    Description = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CreatedDate = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: false),
                     LastModifiedDate = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true)
@@ -96,9 +96,9 @@ namespace Employee.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    FirstName = table.Column<string>(type: "longtext", nullable: false)
+                    FirstName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    LastName = table.Column<string>(type: "longtext", nullable: false)
+                    LastName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DateOfBirth = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     Gender = table.Column<int>(type: "int", nullable: false),
@@ -120,7 +120,7 @@ namespace Employee.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    PositionName = table.Column<string>(type: "longtext", nullable: false)
+                    PositionName = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CreatedDate = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: false),
                     LastModifiedDate = table.Column<DateTimeOffset>(type: "datetime(6)", nullable: true)

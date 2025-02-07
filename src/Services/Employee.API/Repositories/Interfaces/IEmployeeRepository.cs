@@ -11,8 +11,8 @@ namespace Employee.API.Repositories.Interfaces
         Task<ApiResult<IEnumerable<EmployeeDto>>> GetEmployees();
         Task<ApiResult<PagedList<EmployeeDto>>> GetAllEmployees(EmployeeSearchDto search);
         Task<ApiResult<EmployeeDto?>> GetEmployee(Guid id);
-        Task<ApiResult<EmployeeDto>> CreateEmployee(CreateEmployeeDto employee);
-        Task<ApiResult<EmployeeDto>> UpdateEmployee(Employees employee);
+        Task<ApiResult<EmployeeDto>> CreateEmployee(CreateEmployeeDto employeeDto);
+        Task<ApiResult<EmployeeDto>> UpdateEmployee(UpdateEmployeeDto employeeDto);
         Task<ApiResult<bool>> DeleteEmployee(Guid id);
     }
 }

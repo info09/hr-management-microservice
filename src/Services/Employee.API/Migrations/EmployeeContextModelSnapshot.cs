@@ -26,7 +26,6 @@ namespace Employee.API.Migrations
                         .HasColumnType("char(36)");
 
                     b.Property<string>("ContactType")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTimeOffset>("CreatedDate")
@@ -56,7 +55,6 @@ namespace Employee.API.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("DepartmentName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTimeOffset?>("LastModifiedDate")
@@ -83,7 +81,6 @@ namespace Employee.API.Migrations
                         .HasColumnType("char(36)");
 
                     b.Property<string>("FullName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTimeOffset?>("LastModifiedDate")
@@ -107,14 +104,12 @@ namespace Employee.API.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("ChangeType")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<DateTimeOffset>("CreatedDate")
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<Guid>("EmployeeId")
@@ -124,11 +119,9 @@ namespace Employee.API.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("NewValue")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("OldValue")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
@@ -155,7 +148,6 @@ namespace Employee.API.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("Gender")
@@ -168,7 +160,6 @@ namespace Employee.API.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<Guid>("PositionId")
@@ -192,7 +183,6 @@ namespace Employee.API.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("PositionName")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
