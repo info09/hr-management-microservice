@@ -1,9 +1,8 @@
-﻿using Contracts.Domains;
-using Shared.Enums.Employee;
+﻿using Shared.Enums.Employee;
 
-namespace Employee.API.Entities
+namespace Shared.Dtos.Employees.Contact
 {
-    public class Contacts : EntityAuditBase<Guid>
+    public class CreateContactDto
     {
         public Guid EmployeeId { get; set; }
         public ContactType Type { get; set; }

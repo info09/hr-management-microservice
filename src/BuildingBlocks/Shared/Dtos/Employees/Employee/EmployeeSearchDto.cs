@@ -1,6 +1,6 @@
 ﻿using Shared.SeedWorks;
 
-namespace Shared.Dtos.Employee
+namespace Shared.Dtos.Employees.Employee
 {
     public class EmployeeSearchDto : PagingRequestParameters
     {

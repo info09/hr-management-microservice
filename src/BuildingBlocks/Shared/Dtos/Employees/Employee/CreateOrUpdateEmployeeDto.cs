@@ -1,6 +1,6 @@
 ﻿using Shared.Enums.Employee;
 
-namespace Shared.Dtos.Employee
+namespace Shared.Dtos.Employees.Employee
 {
     public abstract class CreateOrUpdateEmployeeDto
     {

@@ -1,5 +1,5 @@
 ﻿using Contracts.Domains;
-using Shared.Dtos.Employee;
+using Shared.Dtos.Employees.Employee;
 using Shared.Enums.Employee;
 
 namespace Employee.API.Entities

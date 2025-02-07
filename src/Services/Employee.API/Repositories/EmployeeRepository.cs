@@ -5,7 +5,7 @@ using Employee.API.Persistance;
 using Employee.API.Repositories.Interfaces;
 using Infrastructures.Common.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Shared.Dtos.Employee;
+using Shared.Dtos.Employees.Employee;
 using Shared.SeedWorks;
 
 namespace Employee.API.Repositories
@@ -22,7 +22,6 @@ namespace Employee.API.Repositories
         {
             var employee = _mapper.Map<Employees>(employeeDto);
             await CreateAsync(employee);
-            //var data = await GetEmployee(id);
             return new ApiResult<EmployeeDto>(true);
         }
 

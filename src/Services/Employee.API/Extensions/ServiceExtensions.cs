@@ -65,6 +65,7 @@ namespace Employee.API.Extensions
                     .AddScoped<IDepartmentRepository, DepartmentRepository>()
                     .AddScoped<IPositionRepository, PositionRepository>()
                     .AddScoped<IEmployeeRepository, EmployeeRepository>()
+                    .AddScoped<IContactRepository, ContactRepository>()
                 ;
         }
     }

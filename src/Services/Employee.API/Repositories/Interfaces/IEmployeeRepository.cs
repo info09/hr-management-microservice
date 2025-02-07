@@ -1,7 +1,7 @@
 ﻿using Contracts.Domains.Interfaces;
 using Employee.API.Entities;
 using Employee.API.Persistance;
-using Shared.Dtos.Employee;
+using Shared.Dtos.Employees.Employee;
 using Shared.SeedWorks;
 
 namespace Employee.API.Repositories.Interfaces

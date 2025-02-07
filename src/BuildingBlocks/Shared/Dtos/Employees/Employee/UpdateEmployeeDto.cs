@@ -1,4 +1,4 @@
-﻿namespace Shared.Dtos.Employee
+﻿namespace Shared.Dtos.Employees.Employee
 {
     public class UpdateEmployeeDto : CreateOrUpdateEmployeeDto
     {

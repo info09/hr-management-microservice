@@ -1,6 +1,7 @@
 ﻿using Employee.API.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Shared.Dtos.Employee;
+using Shared.Dtos.Employees.Contact;
+using Shared.Dtos.Employees.Employee;
 
 namespace Employee.API.Controllers
 {
@@ -9,11 +10,15 @@ namespace Employee.API.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly IEmployeeRepository _employeeRepository;
+        private readonly IContactRepository _contactRepository;
 
-        public EmployeesController(IEmployeeRepository employeeRepository)
+        public EmployeesController(IEmployeeRepository employeeRepository, IContactRepository contactRepository)
         {
             _employeeRepository = employeeRepository;
+            _contactRepository = contactRepository;
         }
+
+        #region CRUD
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -57,5 +62,13 @@ namespace Employee.API.Controllers
             return Ok(data);
         }
 
+        #endregion
+
+        [HttpPost("add-contact")]
+        public async Task<IActionResult> AddContact([FromBody]CreateContactDto dto)
+        {
+            var data = await _contactRepository.AddContact(dto);
+            return Ok(data);
+        }
     }
 }
