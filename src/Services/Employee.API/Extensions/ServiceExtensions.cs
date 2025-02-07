@@ -50,6 +50,8 @@ namespace Employee.API.Extensions
             return services.AddScoped(typeof(IRepositoryBaseAsync<,,>), typeof(RepositoryBaseAsync<,,>))
                     .AddScoped(typeof(IUnitOfWork<>), typeof(UnitOfWork<>))
                     .AddScoped<IDepartmentRepository, DepartmentRepository>()
+                    .AddScoped<IPositionRepository, PositionRepository>()
+                    .AddScoped<IEmployeeRepository, EmployeeRepository>()
                 ;
         }
     }

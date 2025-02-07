@@ -1,10 +1,8 @@
-﻿using Contracts.Domains;
-using Shared.Dtos.Employee;
-using Shared.Enums.Employee;
+﻿using Shared.Enums.Employee;
 
-namespace Employee.API.Entities
+namespace Shared.Dtos.Employee
 {
-    public class Employees : EntityAuditBase<Guid>
+    public abstract class CreateOrUpdateEmployeeDto
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
@@ -14,10 +12,5 @@ namespace Employee.API.Entities
         public Guid DepartmentId { get; set; }
         public Guid PositionId { get; set; }
         public bool EmployeeStatus { get; set; }
-
-        public EmployeeDto ToDto()
-        {
-            return new EmployeeDto(FirstName, LastName, DateOfBirth, Gender, HireDate, DepartmentId, PositionId, EmployeeStatus);
-        }
     }
 }

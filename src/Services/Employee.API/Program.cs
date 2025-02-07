@@ -6,7 +6,7 @@ using Serilog;
 var builder = WebApplication.CreateBuilder(args);
 
 
-Log.Information("Start Basket API up");
+Log.Information($"Start {builder.Environment.ApplicationName} up");
 
 try
 {
@@ -34,7 +34,7 @@ catch (Exception ex)
 }
 finally
 {
-    Log.Information("Shut down Basket API complete");
+    Log.Information($"Shut down {builder.Environment.ApplicationName} complete");
     Log.CloseAndFlush();
 }
 
