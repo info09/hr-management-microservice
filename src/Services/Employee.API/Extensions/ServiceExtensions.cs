@@ -53,7 +53,7 @@ namespace Employee.API.Extensions
             {
                 options.AddPolicy("CorsPolicy", builder =>
                 {
-                    builder.WithOrigins(origin).AllowAnyHeader().AllowAnyMethod();
+                    builder.WithOrigins(origin!).AllowAnyHeader().AllowAnyMethod();
                 });
             });
         }
@@ -66,6 +66,7 @@ namespace Employee.API.Extensions
                     .AddScoped<IPositionRepository, PositionRepository>()
                     .AddScoped<IEmployeeRepository, EmployeeRepository>()
                     .AddScoped<IContactRepository, ContactRepository>()
+                    .AddScoped<IEmployeeHistoryRepository, EmployeeHistoryRepository>()
                 ;
         }
     }

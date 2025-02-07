@@ -2,6 +2,7 @@
 using Employee.API.Entities;
 using Shared.Dtos.Employees.Contact;
 using Shared.Dtos.Employees.Employee;
+using Shared.Dtos.Employees.EmployeeHistory;
 
 namespace Employee.API
 {
@@ -13,6 +14,7 @@ namespace Employee.API
             CreateMap<UpdateEmployeeDto, Employees>();
 
             CreateMap<CreateContactDto, Contacts>();
+            CreateMap<CreateEmployeeHistoryDto, EmployeeHistories>();
         }
     }
 }
